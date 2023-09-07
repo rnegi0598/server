@@ -1,9 +1,10 @@
 const jwt=require('jsonwebtoken');
 
 const validateToken=(req,res,next)=>{
-    
-    
-    const {token}=req.cookies;
+    const authorization=req.headers.authorization || req.headers.Authorization;
+    // console.log(authorization);
+    const token=authorization.split(" ")[1];
+
     if(!token){
         throw new Error('token does not exist')
     }

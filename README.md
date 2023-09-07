@@ -55,6 +55,10 @@ Response
 ### Get Current User
 Endpoint : `GET /api/user`  
 Get information about the currently logged-in user.  
+
+Request Headers   
+Authorization: Bearer Token (Include the user's access token)     
+
 Response   
 - `200 OK` : User information retrieved successfully.Returns the user.
 ```json
@@ -71,6 +75,9 @@ Response
 
 Endpoint:` GET /api/user/loans`
 Retrieve all loans for the currently logged-in user.
+
+Request Headers   
+Authorization: Bearer Token (Include the user's access token)  
 
 Response   
 - `200 OK`: Loans retrieved successfully.Return loans array.
@@ -89,6 +96,10 @@ Response
 
 Endpoint: `POST /api/user/loans`  
 Create a new loan for the currently logged-in user.  
+
+Request Headers   
+Authorization: Bearer Token (Include the user's access token)  
+
 Request 
 ```json
 {
@@ -112,6 +123,10 @@ Response
 ### Get Loan Details
 Endpoint: `GET /api/user/loans/:id`  
 Retrieve details of a specific loan.  
+
+Request Headers   
+Authorization: Bearer Token (Include the user's access token)  
+
 Response   
 - `200 OK`: Loan details retrieved successfully. Returns loan array.
 ```json
@@ -127,6 +142,10 @@ Response
 ### Repay a Loan
 Endpoint: `POST /api/user/loans/:id/repay`
 Submit a repayment for a specific loan.  
+
+Request Headers   
+Authorization: Bearer Token (Include the user's access token)  
+
 Request 
 ```json
 {
@@ -153,6 +172,9 @@ Response
 Endpoint: `GET /api/admin/loans`   
 Retrieve all loans for admin approval.
 
+Request Headers   
+Authorization: Bearer Token (Include the user's access token)  
+
 Response
 - `200 OK`: Loan repayment successful. Returns loan array.
 ```json
@@ -168,6 +190,10 @@ Response
 ### Approve a Loan
 Endpoint: `POST /api/admin/loans/:id/approve`
 Approve a specific loan.   
+
+Request Headers   
+Authorization: Bearer Token (Include the user's access token)  
+
 Response
 - `200 OK`: Loan approved successfully. Returns loan array.
 ```json
